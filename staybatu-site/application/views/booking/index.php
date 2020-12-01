@@ -3,7 +3,7 @@
     <center>
         <h3>Booking <?php echo $homestay['judul'] ?></h3>
         <hr>
-        <form action="<?= base_url('Booking/addTransaksi1/') ?>" method="post">
+        <?= form_open_multipart('Booking/addTransaksi1')  ?>
 
             <div class="form-group">
                 <label>Nama : <input type="text" class="form-control" name="nama" id="nama" placeholder="Tulis nama" required> </label>
