@@ -77,8 +77,9 @@ class Home extends CI_Controller
 
         $data['homestay'] = $this->Home_model->get_homestay($id);
         $data['harga'] = $data['homestay']['harga'];
+	$data['title'] = 'Upload Bukti Transaksi';
 
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
         $this->load->view('booking/bayar', $data);
         $this->load->view('templates/footer');
     }
