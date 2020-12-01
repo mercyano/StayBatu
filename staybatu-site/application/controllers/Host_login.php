@@ -6,6 +6,7 @@ class Host_login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+		$this->load->model('Home_model');
     }
 
     public function index()
@@ -19,4 +20,17 @@ class Host_login extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('host_login/host_sewa',$data);
     }
+	
+	public function edit($id = NULL){
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['homestay'] = $this->Home_model->get_homestay($id);
+
+        if(empty($data['homestay'])){
+            show_404();
+        }
+
+        $data['title'] = 'Edit Homestay';
+        $this->load->view('host_login/edit', $data);
+
+   }
 }
