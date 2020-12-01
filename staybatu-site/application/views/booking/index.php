@@ -1,10 +1,12 @@
 <div class="container">
-    <hr>
+
     <center>
         <h3>Booking <?php echo $homestay['judul'] ?></h3>
-        <form action="<?= base_url('Booking/addTransaksi1/') . $homestay['id'] ?>" method="post">
+        <hr>
+        <form action="<?= base_url('Booking/addTransaksi1/') ?>" method="post">
+
             <div class="form-group">
-                <label>Nama :<input type="text" class="form-control" name="nama" id="nama" i placeholder="Tulis nama" required> </label>
+                <label>Nama : <input type="text" class="form-control" name="nama" id="nama" placeholder="Tulis nama" required> </label>
             </div>
             <div class="form-group">
                 <label>Email : <input type="text" class="form-control" name="email" id="email" placeholder="Tulis Email" required></label>
@@ -18,13 +20,26 @@
             <div class="form-group">
                 <label>Check out : <input type="date" class="form-control" name="check_out" id="check_out" required></label>
             </div>
-    </center>
+            <div class="custom-file">
+                <input type="file" accept=".jpg, .jpeg, .png" multiple class="custom-file-input" name="gambar" id="gambar" required>
+                <label class="custom-file-label" for="gambar">Screenshoot Bukti Pembayaran <span style="color: red;">*</span></label></label>
+                <small id="gambar" class="text-muted">
+                    Pembayaran dapat dilakukan dengan menghubungi nomor whatsapp berikut :<?php echo $homestay['no_wa'] ?>
+                </small>
+            </div>
+
 </div>
+<br>
+
+<hr>
 <div class="text-center">
     <button type=" submit" class="btn btn-success">Submit</button>
     </a>
+    </center>
+    <br>
+    </br>
 </div>
 </form>
-<br><br></div>
+</div>
 
 </div>
