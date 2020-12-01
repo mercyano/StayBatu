@@ -13,7 +13,7 @@ class Home extends CI_Controller
     {
 
         $data['title'] = 'StayBatu - Temukan Homestay dengan Harga Terbaik!';
-        $data['homestay'] = $this->Home_model->get_homestay();
+        $data['homestay'] = $this->Home_model->get_recommend_homestay();
         $data['nama'] = $nama;
 
         $this->load->view('templates/header', $data);
