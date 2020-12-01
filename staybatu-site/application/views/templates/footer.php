@@ -5,7 +5,15 @@
         <i class="fab fa-instagram"></i>
         <i class="far fa-envelope"></i>
         <p>© Copyright 2020 StayBatu</p>
-    </footer>
+</footer>
+
+<!-- Upload Gambar js -->
+	<script type="application/javascript">
+		$('input[type="file"]').change(function (e) {
+			var fileName = e.target.files[0].name;
+			$('.custom-file-label').html(fileName);
+		});
+	</script>
 </body>
 
 </html>
