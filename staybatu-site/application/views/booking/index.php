@@ -39,7 +39,7 @@
     <br>
     </br>
 </div>
-</form>
+<?= form_close() ?>
 </div>
 
 </div>
