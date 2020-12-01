@@ -40,8 +40,18 @@
                       <td><?= $ku['ac'] ?></td>
                       <td><?= $ku['dapur'] ?></td>
                       <td><?= $ku['parkir'] ?></td>
-                      <td><a href="<?php echo base_url() ?>host_login/edit/<?= $ku['id'];?>" title="Update Record" data-toggle="tooltip"><i class="fas fa-fw fa-edit"></i></a></td>
-                      <!-- <td><a href="<?= base_url('host_login/sewakan'); ?>?id=<?= $user['id_pemilik']; ?>" title="Update Record" data-toggle="tooltip"><i class="fas fa-fw fa-edit"></i></a></td> -->
+                      <td>
+                        <center>
+                          <a href="<?php echo base_url() ?>host_login/edit/<?= $ku['id'];?>" title="Update Record" data-toggle="tooltip">
+                            <i class="fas fa-fw fa-edit"></i>
+                          </a>
+                          <a href="<?= base_url('host_login/deleteHomestay/'). $ku['id']; ?>">
+                            <i class="fas fa-fw fa-trash"></i>
+                          </a>
+                        </center>
+                        
+                      </td>
+                      <!-- <td><a href="<?php /*echo base_url('host_login/sewakan'); ?>?id=<?= $user['id_pemilik']; */ ?>" title="Update Record" data-togglesss="tooltip"><i class="fas fa-fw fa-edit"></i></a></td> -->
                     </tr>
                   <?php $i++; ?>
                   <?php endforeach; ?>
