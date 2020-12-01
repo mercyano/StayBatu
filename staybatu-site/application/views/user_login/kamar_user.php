@@ -45,7 +45,7 @@
                           <a href="<?php echo base_url() ?>host_login/edit/<?= $ku['id'];?>" title="Update Record" data-toggle="tooltip">
                             <i class="fas fa-fw fa-edit"></i>
                           </a>
-                          <a href="<?= base_url('host_login/deleteHomestay/'). $ku['id']; ?>">
+                          <a style="color:red;" href="<?= base_url('host_login/deleteHomestay/'). $ku['id']; ?>">
                             <i class="fas fa-fw fa-trash"></i>
                           </a>
                         </center>
