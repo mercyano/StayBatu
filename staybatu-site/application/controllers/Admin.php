@@ -92,7 +92,7 @@ class Admin extends CI_Controller
         $data['title'] = 'Homestay';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         
-        $data['tabel'] = $this->db->select('id, judul, harga, kapasitas, kamar_tidur, kamar_mandi, wifi, tv, ac, dapur, parkir, host_id, status')->from('homestay')->get()->result_array();
+        $data['tabel'] = $this->db->select('id, judul, harga, kapasitas, kamar_tidur, kamar_mandi, wifi, tv, ac, dapur, parkir, id_pemilik, status')->from('homestay')->get()->result_array();
         
 
         $this->load->view('templates_login/header', $data);
@@ -135,6 +135,16 @@ class Admin extends CI_Controller
         $this->load->view('templates_login/topbar', $data);
         $this->load->view('menu_login/data_user', $data);
         $this->load->view('templates_login/footer');
+    }
+
+    public function deleteHomestay($id) {
+        $this->db->delete('homestay', array('id' => $id));
+        redirect('admin/homestay');
+    }
+
+    public function deleteUser($id) {
+        $this->db->delete('user', array('id_pemilik' => $id));
+        redirect('admin/data_user');
     }
 
 }
