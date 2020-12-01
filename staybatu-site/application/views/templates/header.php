@@ -45,9 +45,13 @@
     </script>
     
     <style>
-		body {
-			padding-top: 90px;
-		}
+	body {
+		padding-top: 90px;
+	}
+		.carousel-paragraph {
+			font-family: 'Montserrat', sans-serif;
+			color: white;
+			font-weight: #f4f4f4;
 	</style>
 
 </head>
