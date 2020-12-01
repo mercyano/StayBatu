@@ -17,7 +17,7 @@
 			</div>
 			<div class="carousel-caption">
 				<h3 class="h3-responsive">StayBatu</h3>
-				<p>Website penyedia layanan homestay di Kota Batu.</p>
+				<p class="carousel-paragraph">Website penyedia layanan homestay di Kota Batu.</p>
 			</div>
 		</div>
 		<div class="carousel-item">
@@ -29,7 +29,7 @@
 			</div>
 			<div class="carousel-caption">
 				<h3 class="h3-responsive">Berkualitas</h3>
-				<p>Homestay yang terdaftar di website ini telah lulus tahap screening kami.</p>
+				<p class="carousel-paragraph">Homestay yang terdaftar di website ini telah lulus tahap screening kami.</p>
 			</div>
 		</div>
 		<div class="carousel-item">
@@ -41,7 +41,7 @@
 			</div>
 			<div class="carousel-caption">
 				<h3 class="h3-responsive">Terjamin</h3>
-				<p>Garansi 100% dari penipuan.</p>
+				<p class="carousel-paragraph">Garansi 100% dari penipuan.</p>
 			</div>
 		</div>
 	</div>
@@ -61,34 +61,50 @@
 
 <!-- Cards Carousel -->
 <div class="container">
-	<h2>Rekomendasi Homestay</h2><div class="float-right">
-		<a href="<?php echo base_url(); ?>all">Lihat lebih banyak</a></div><br>
-
-	<div class="row">
+	<hr>
+	<h2 class="text-center" style="padding: 3% 3%;">Rekomendasi Homestay Termurah</h2>
+	<br>
+	
+	<div class="row justify-content-center">
 		<?php foreach($homestay as $home) : ?>
 
 		<div class="homestay-column col-lg-4 col-md-6">
 
-			<div class="card">
+			<div class="card rounded" style="width: 21rem; height: 42rem; text-align:center; border:3px solid #61b15a;">
 				<!--<img class="image-thumbnail card-img-top" src="<?= base_url()?>assets/images/thumbnail.jpg" alt="Card image cap">-->
-				<embed class="image-thumbnail card-img-top" src="data:image/jpeg;base64,<?= base64_encode($home['gambar']); ?>" />
+				<embed class="image-thumbnail img-fluid card-img-top"
+					src="data:image/jpeg;base64,<?= base64_encode($home['gambar']); ?>" style="min-height: 11rem;
+    		max-height: 16rem;"/>
 				<!--<?php /*echo "<embed src='data:".$row['mime'].";base64,".base64_encode($row['data'])."'width='200'/>" */?>-->
-				<div class="card-body">
-					<h5 class="card-title"><?php echo $home['judul'] ?></h5>
-
+				<div class="card-body" style="padding-bottom: 12px;">
+					<h5 class="card-title"><?php echo character_limiter($home['judul'], 80)?></h5>
+				</div>
+				<div class="card">
+					<div class="card-body" style="padding-bottom: 12px;">
+						<ul style="padding-inline-start: 0;">
+							<?php echo ($home['wifi'] == 1) ? ('<h5><i class="fas fa-wifi"></i> Wifi</h5>' ) : '' ?>
+							<?php echo ($home['tv'] == 1) ? ('<h5><i class="fas fa-tv"></i> TV</h5>' ) : '' ?>
+							<?php echo ($home['ac'] == 1) ? ('<h5><i class="far fa-snowflake"></i> AC</h5>' ) : '' ?>
+							<?php echo ($home['dapur'] == 1) ? ('<h5><i class="fas fa-utensils"></i> Dapur</h5>' ) : '' ?>
+							<?php echo ($home['parkir'] == 1) ? ('<h5><i class="fas fa-parking"></i> Tempat Parkir</h5>' ) : '' ?>
+						</ul>
+					</div>
 				</div>
 				<ul class="list-group list-group-flush">
 					<li class="list-group-item"><span style="font-weight: bold;">Harga per Malam: </span>Rp.
 						<?php echo $home['harga'] ?></li>
 				</ul>
 				<div class="card-body">
-					<a href="<?php echo site_url('home/'.$home['id'])?>"><button
-							class="btn btn-primary btn-block">Selengkapnya</button></a>
+					<a style="text-decoration : none" href="<?php echo site_url('home/view/'.$home['id'])?>"><button
+							class="btn btn-success btn-block">Selengkapnya</button></a>
 				</div>
 			</div>
 		</div>
 		<?php endforeach ?>
+		<hr><br>
+
+		<a href="<?php echo base_url(); ?>all"><button class="btn btn-success btn-lg">Lihat homestay lainnya</button></a>
 	</div>
-
-
+	<br><br>
 </div>
+
