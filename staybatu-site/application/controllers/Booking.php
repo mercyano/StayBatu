@@ -28,7 +28,6 @@ class Booking extends CI_Controller
             'no_telp' => $no_telp,
             'check_in' => $check_in,
             'check_out' => $check_out,
-            'id_transaksi' => '',
             'bukti_transaksi' => $bukti_transaksi,
             'mime' => $type
         );
