@@ -201,10 +201,10 @@
 			<input type="tel" class="form-control" name="no_wa" placeholder="Nomor WA" id="no_wa" required>
 		</div>
 		<div class="custom-file">
-			<input type="file" accept=".jpg, .jpeg, .png" multiple class="custom-file-input" name="gambar" id="gambar"
+			<input type="file" accept=".jpg, .jpeg, .png" class="custom-file-input" name="gambar" id="gambar"
 				required>
 			<label class="custom-file-label" for="gambar">Pilih Gambar <span
-					style="color: red;">*</span></label></label>
+					style="color: red;">*</span></label>
 			<small id="gambar" class="text-muted">
 				Upload Gambar Homestay (JPG, JPEG, PNG)
 			</small>
@@ -241,7 +241,13 @@
 			</div>
 		</div>
 	</div>
-
+	<!-- Upload Gambar js -->
+	<script type="application/javascript">
+		$('input[type="file"]').change(function (e) {
+			var fileName = e.target.files[0].name;
+			$('.custom-file-label').html(fileName);
+		});
+	</script>
 </body>
 
 </html>
