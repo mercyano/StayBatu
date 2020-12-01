@@ -48,7 +48,7 @@
                       <td><?= $homestay['status']; ?></td>
                       <td>
                         <center>
-                          <a href="<?= base_url('admin/deleteHomestay/'). $homestay['id']; ?>">
+                          <a style="color:red;" href="<?= base_url('admin/deleteHomestay/'). $homestay['id']; ?>">
                             <i class="fas fa-trash"></i>
                           </a>
                         </center>
