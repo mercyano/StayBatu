@@ -25,6 +25,7 @@
                       <th>Parkir</th>
                       <th>Host Id</th>
                       <th>Status</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -43,8 +44,15 @@
                       <td><?= $homestay['ac']; ?></td>
                       <td><?= $homestay['dapur']; ?></td>
                       <td><?= $homestay['parkir']; ?></td>
-                      <td><?= $homestay['host_id']; ?></td>
+                      <td><?= $homestay['id_pemilik']; ?></td>
                       <td><?= $homestay['status']; ?></td>
+                      <td>
+                        <center>
+                          <a href="<?= base_url('admin/deleteHomestay/'). $homestay['id']; ?>">
+                            <i class="fas fa-trash"></i>
+                          </a>
+                        </center>
+                      </td>
                     </tr>
                     <?php $i++; ?>
                     <?php endforeach; ?>
