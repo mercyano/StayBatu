@@ -3,7 +3,7 @@
     <center>
         <h3>Booking <?php echo $homestay['judul'] ?></h3>
         <hr>
-        <?= form_open_multipart('Booking/addTransaksi1')  ?>
+        <?= form_open_multipart('home/bayar/'.$homestay['id'])  ?>
 
             <div class="form-group">
                 <label>Nama : <input type="text" class="form-control" name="nama" id="nama" placeholder="Tulis nama" required> </label>
@@ -21,10 +21,10 @@
                 <label>Check out : <input type="date" class="form-control" name="check_out" id="check_out" required></label>
             </div>
             <div class="custom-file">
-                <input type="file" accept=".jpg, .jpeg, .png" multiple class="custom-file-input" name="gambar" id="gambar" required>
-                <label class="custom-file-label" for="gambar">Screenshoot Bukti Pembayaran <span style="color: red;">*</span></label></label>
-                <small id="gambar" class="text-muted">
-                    Pembayaran dapat dilakukan dengan menghubungi nomor whatsapp berikut :<?php echo $homestay['no_wa'] ?>
+                <input type="file" accept=".jpg, .jpeg, .png" class="custom-file-input" name="bukti_transaksi" id="bukti_transaksi" required>
+                <label class="custom-file-label" for="bukti_transaksi">Screenshoot Bukti Pembayaran <span style="color: red;">*</span></label></label>
+                <small id="bukti_transaksi" class="text-muted">
+                    Pembayaran dapat dilakukan dengan menghubungi nomor whatsapp berikut : <strong><?php echo $homestay['no_wa'] ?></strong>
                 </small>
             </div>
 
