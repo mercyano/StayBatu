@@ -6,7 +6,6 @@ class Home_model extends CI_Model
     public function __construct()
     {
         $this->load->database(); // Load database
-        $this->load->model('Home_model');
     }
 
     public function get_homestay($id = FALSE)
