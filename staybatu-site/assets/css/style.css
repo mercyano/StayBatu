@@ -68,7 +68,8 @@ body {
 }
 
 .image-thumbnail {
-    width: 100%;
+    min-height: 50rem;
+    max-height: 50rem;
 }
 
 /* Section Title */
