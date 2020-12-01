@@ -17,6 +17,7 @@
                       <th>Email</th>
                       <th>Role Id</th>
                       <th>Date Created</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -24,11 +25,18 @@
                     <?php foreach( $tabel as $akun ): ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $akun['host_id']; ?></td>
+                      <td><?= $akun['id_pemilik']; ?></td>
                       <td><?= $akun['name']; ?></td>
                       <td><?= $akun['email']; ?></td>
                       <td><?= $akun['role_id']; ?></td>
                       <td><?= date('d F Y', $akun['date_created']); ?></td>
+                      <td>
+                        <center>
+                          <a href="<?= base_url('admin/deleteUser/').$akun['id_pemilik']; ?>">
+                            <i class="fas fa-trash"></i>
+                          </a>
+                        </center>
+                      </td>
                     </tr>
                     <?php $i++; ?>
                   <?php endforeach; ?>
