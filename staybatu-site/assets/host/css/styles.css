@@ -1,0 +1,206 @@
+.navbar-brand {
+    font-family: Viga;
+    font-size: 32px;
+}
+
+.navbar-brand,
+.nav-link {
+    color: green !important;
+    text-shadow: 1px 1px 1px black;
+}
+
+.nav-link {
+    margin-right: 50px;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    padding: 1rem 5rem;
+
+}
+
+.navbar-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.host-sewa-box {
+    margin-top: 30px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 60px;
+    padding: 40px 50px;
+    background-color: #28df99;
+    box-shadow: 3px 5px 10px #065446;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-button {
+    margin-top: 1rem;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-weight: 700;
+
+}
+
+/* Section Title */
+#title {
+    background-image: url(https://images.unsplash.com/photo-1568495248636-6432b97bd949?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+    background-size: cover;
+}
+
+.container-fluid {
+    padding: 3% 15% 13%;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px black;
+}
+
+.sewa-button {
+    margin: 5% 3% 5% 0;
+}
+
+.title-image {
+    width: 110%;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: #8f8f8f;
+}
+
+/* Tata Cara */
+#tatacara {
+    padding: 7% 15%;
+    background-color: white;
+    position: relative;
+}
+
+.icon {
+    color: #056676;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.icon:hover {
+    color: #5eaaa8;
+    text-decoration: none;
+}
+
+.black-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    color: black;
+    text-shadow: 1px 1px 1px gray;
+    text-align: center;
+}
+
+.tatacara-box {
+    text-align: center;
+    padding: 3%;
+}
+
+/* Keamanan */
+#keamanan {
+    background-color: #065446;
+    padding: 7% 15%;
+}
+
+.white-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.keamanan-icon {
+    color: #28df99;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.keamanan-icon:hover {
+    color: #99f3bd;
+    text-decoration: none;
+}
+
+.keamanan-box {
+    padding: 3%;
+}
+
+/* Keuangan */
+#keuangan {
+    background-color: white;
+    padding: 7% 15%;
+
+}
+
+.keuangan-heading3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.keuangan-box {
+    text-align: center;
+    padding: 3%;
+}
+
+/* Footer */
+#footer {
+    padding: 1% 15%;
+    text-align: center;
+    background-color: #065446;
+}
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: center;
+    }
+    .title-image {
+        position: static;
+    }
+}
