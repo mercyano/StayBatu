@@ -53,50 +53,59 @@ class Home extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function bayar($id = NULL)
+    public function bayar($id_homestay = NULL)
     {
+
         $nama = $this->input->post('nama');
         $email = $this->input->post('email');
         $no_telp = $this->input->post('no_telp');
         $check_in = $this->input->post('check_in');
         $check_out = $this->input->post('check_out');
-        $bukti_transaksi = file_get_contents($_FILES['bukti_transaksi']['tmp_name']); 
-        $type = $_FILES['bukti_transaksi']['type']; 
-		
+
+
         $data = array(
             'id_pemesan' => '',
+            'id_homestay' => $id_homestay,
             'nama' => $nama,
             'email' => $email,
             'no_telp' => $no_telp,
             'check_in' => $check_in,
             'check_out' => $check_out,
-            'bukti_transaksi' => $bukti_transaksi,
-            'mime' => $type
-        );        
+
+        );
         $this->db->insert('pemesan', $data);
 
-        $data['homestay'] = $this->Home_model->get_homestay($id);
+        $data['homestay'] = $this->Home_model->get_homestay($id_homestay);
         $data['harga'] = $data['homestay']['harga'];
-	$data['title'] = 'Upload Bukti Transaksi';
+        $data['title'] = 'Upload Bukti Transaksi';
 
         $this->load->view('templates/header', $data);
         $this->load->view('booking/bayar', $data);
         $this->load->view('templates/footer');
     }
 
-    public function transaksi($id = NULL)
+    public function transaksi($id_homestay = NULL)
     {
-        $data['homestay'] = $this->Home_model->get_homestay($id);
+        $data['homestay'] = $this->Home_model->get_homestay($id_homestay);
 
         if (empty($data['homestay'])) {
             show_404();
         }
 
+
         $data['judul'] = $data['homestay']['judul'];
         $data['title'] = $data['judul'];
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('transaksi/index', $data);
-        $this->load->view('templates/footer');
+        $bukti_transaksi = file_get_contents($_FILES['bukti_transaksi']['tmp_name']);
+        $type = $_FILES['bukti_transaksi']['type'];
+
+        $masuk = array(
+            'id_transaksi' => '',
+            'id_homestay' => $id_homestay,
+            'bukti_transaksi' => $bukti_transaksi,
+            'mime' => $type
+        );
+        $this->db->insert('upload_transaksi', $masuk);
+        redirect('host');
     }
 }
