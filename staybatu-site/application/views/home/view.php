@@ -26,7 +26,7 @@
     
 
     <div class="text-center">
-        <a href="<?php echo site_url('home/booking/' . $homestay['id']) ?>">
+        <a href="<?php echo site_url('home/booking/' . $homestay['id_homestay']) ?>">
             <button class="btn btn-success btn-lg">Booking Homestay</button></a> </div>
     <br><br>
 
