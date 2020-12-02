@@ -3,7 +3,7 @@
     <center>
         <h3>Booking <?php echo $homestay['judul'] ?></h3>
         <hr>
-        <?= form_open_multipart('home/bayar/' . $homestay['id'])  ?>
+        <?= form_open_multipart('home/bayar/' . $homestay['id_homestay'])  ?>
 
         <div class="form-group">
             <label>Nama : <input type="text" class="form-control" name="nama" id="nama" placeholder="Tulis nama" required> </label>
