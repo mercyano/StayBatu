@@ -18,6 +18,7 @@
                       <th>No Telphone</th>
                       <th>Check In</th>
                       <th>Check Out</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
