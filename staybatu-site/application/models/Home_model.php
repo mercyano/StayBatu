@@ -14,7 +14,7 @@ class Home_model extends CI_Model
                 $query = $this->db->get('homestay');
                 return $query->result_array();
             }
-            $query = $this->db->get_where('homestay', array('id'=>$id));
+            $query = $this->db->get_where('homestay', array('id_homestay'=>$id));
             return $query->row_array();
     }
 	
@@ -25,7 +25,7 @@ class Home_model extends CI_Model
                 
                 return $query->result_array();
             }
-            $query = $this->db->get_where('homestay', array('id'=>$id));
+            $query = $this->db->get_where('homestay', array('id_homestay'=>$id));
             return $query->row_array();
         }
 }
