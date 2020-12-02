@@ -33,7 +33,7 @@
                     <?php foreach( $tabel as $homestay ): ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $homestay['id']; ?></td>
+                      <td><?= $homestay['id_homestay']; ?></td>
                       <td><?= $homestay['judul']; ?></td>
                       <td><?= $homestay['harga']; ?></td>
                       <td><?= $homestay['kapasitas']; ?></td>
@@ -48,7 +48,7 @@
                       <td><?= $homestay['status']; ?></td>
                       <td>
                         <center>
-                          <a href="<?= base_url('admin/deleteHomestay/'). $homestay['id']; ?>">
+                          <a href="<?= base_url('admin/deleteHomestay/'). $homestay['id_homestay']; ?>">
                             <i class="fas fa-trash"></i>
                           </a>
                         </center>
