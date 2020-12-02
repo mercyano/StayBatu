@@ -117,6 +117,7 @@ class Admin extends CI_Controller
     public function reservasi_pembayaran() {
         $data['title'] = 'Reservasi Pembayaran';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['tabel'] = $this->db->get('upload_transaksi')->result_array();
 
         $this->load->view('templates_login/header', $data);
         $this->load->view('templates_login/sidebar', $data);
@@ -151,6 +152,11 @@ class Admin extends CI_Controller
     public function deleteBooking($id) {
         $this->db->delete('pemesan', array('id_pemesan' => $id));
         redirect('admin/reservasi');
+    }
+
+    public function deleteTransaksi($id) {
+        $this->db->delete('upload_transaksi', array('id_transaksi' => $id));
+        redirect('admin/reservasi_pembayaran');
     }
 
 }

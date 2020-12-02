@@ -78,7 +78,7 @@ class User extends CI_Controller
             $this->db->update('user');
 
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Your profile has been updated!</div>');
-            redirect('user');
+            redirect('user/user_admin');
         }
     }
 
@@ -221,5 +221,31 @@ class User extends CI_Controller
                 }
             }
         }
+    }
+
+    public function booking() {
+        $data['title'] = 'Daftar Homestay';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->model('Kamar_model', 'kamar');
+        $data['tabel'] = $this->kamar->bookingUser($data['user']['id_pemilik']);
+
+        $this->load->view('templates_login/header', $data);
+        $this->load->view('templates_login/user_sidebar', $data);
+        $this->load->view('templates_login/user_topbar', $data);
+        $this->load->view('user_login/tabel_booking', $data);
+        $this->load->view('templates_login/footer');
+    }
+
+    public function transaksi() {
+        $data['title'] = 'Daftar Homestay';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->model('Kamar_model', 'kamar');
+        $data['tabel'] = $this->kamar->transaksiUser($data['user']['id_pemilik']);
+
+        $this->load->view('templates_login/header', $data);
+        $this->load->view('templates_login/user_sidebar', $data);
+        $this->load->view('templates_login/user_topbar', $data);
+        $this->load->view('user_login/tabel_transaksi', $data);
+        $this->load->view('templates_login/footer');
     }
 }
