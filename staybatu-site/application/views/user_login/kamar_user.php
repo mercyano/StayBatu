@@ -1,4 +1,4 @@
-         
+     
     <div id="content-wrapper">
       <h1 class="h3 mb-4 ml-3 text-gray-800"><?= $title; ?></h1>
       <div class="container-fluid">
@@ -42,10 +42,10 @@
                       <td><?= $ku['parkir'] ?></td>
                       <td>
                         <center>
-                          <a href="<?php echo base_url() ?>host_login/edit/<?= $ku['id'];?>" title="Update Record" data-toggle="tooltip">
+                          <a href="<?php echo base_url() ?>host_login/edit/<?= $ku['id_homestay'];?>" title="Update Record" data-toggle="tooltip">
                             <i class="fas fa-fw fa-edit"></i>
                           </a>
-                          <a href="<?= base_url('host_login/deleteHomestay/'). $ku['id']; ?>">
+                          <a href="<?= base_url('host_login/deleteHomestay/'). $ku['id_homestay']; ?>">
                             <i class="fas fa-fw fa-trash"></i>
                           </a>
                         </center>
