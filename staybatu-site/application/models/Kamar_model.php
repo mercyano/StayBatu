@@ -49,4 +49,15 @@ class Kamar_model extends CI_Model
            ->get()->result_array();
            return $query;
       }
+
+      public function get_pemesan_by_id_pemesan($id_pemesan){
+          $query = $this->db->select('pemesan.id_pemesan, pemesan.id_pemilik, pemesan.email, user.name, homestay.judul, homestay.harga, pemesan.id_homestay, pemesan.nama, pemesan.check_in, pemesan.check_out')
+           ->from('pemesan')
+           ->join('homestay', 'homestay.id_homestay = pemesan.id_homestay')
+           ->join('user', 'pemesan.id_pemilik = user.id_pemilik')
+           ->join('upload_transaksi', 'pemesan.id_pemesan = upload_transaksi.id_transaksi')
+           ->where('pemesan.id_pemesan', $id_pemesan)
+           ->get()->row_array();
+           return $query;
+     }
 }
