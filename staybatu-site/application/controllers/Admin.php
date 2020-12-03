@@ -178,7 +178,7 @@ class Admin extends CI_Controller
     public function deletePemesan($id) {
         $this->db->delete('upload_transaksi', array('id_homestay' => $id));
         $this->db->delete('pemesan', array('id_homestay' => $id));
-        redirect('user/pemesan');
+        redirect('admin/pemesan');
     }
 
 }
