@@ -248,4 +248,23 @@ class User extends CI_Controller
         $this->load->view('user_login/tabel_transaksi', $data);
         $this->load->view('templates_login/footer');
     }
+
+    public function pemesan(){
+        $data['title'] = 'Daftar Pemesan Homestay';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->model('Kamar_model', 'kamar');
+        $data['tabel'] = $this->kamar->get_pemesan($data['user']['id_pemilik']);
+        
+        $this->load->view('templates_login/header', $data);
+        $this->load->view('templates_login/user_sidebar', $data);
+        $this->load->view('templates_login/user_topbar', $data);
+        $this->load->view('user_login/pemesan', $data);
+        $this->load->view('templates_login/footer');
+    }
+
+    public function deleteTransaksi($id) {
+        $this->db->delete('upload_transaksi', array('id_homestay' => $id));
+        $this->db->delete('pemesan', array('id_homestay' => $id));
+        redirect('user/pemesan');
+    }
 }
