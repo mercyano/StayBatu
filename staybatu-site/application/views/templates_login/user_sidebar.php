@@ -22,9 +22,9 @@
                   </a>
             </li>
             <li class="nav-item">
-        		<a class="nav-link" href="<?= base_url('user/kamar_user'); ?>">
+        		<a class="nav-link" href="<?= base_url('user/pemesan'); ?>">
             <i class="fas fa-money-bill-wave-alt"></i>
-        			<span>Pesanan</span>
+        			<span>Pemesan</span>
         		</a>
         	</li>
             <li class="nav-item">
