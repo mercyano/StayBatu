@@ -269,6 +269,30 @@ class User extends CI_Controller
     }
 
     public function terima($id_pemesan){
+        $this->load->config('email');
+        $this->load->library('email');
+        $this->load->model('Kamar_model', 'kamar');
+        $data['pemesan'] = $this->kamar->get_pemesan_by_id_pemesan($id_pemesan);
         
+
+        $email = $data['pemesan']['email'];
+        $homestay = $data['pemesan']['judul'];
+        $nama = $data['pemesan']['nama'];
+        $check_in = $data['pemesan']['check_in'];
+        $check_out = $data['pemesan']['check_out'];
+        $pemilik = $data['pemesan']['name'];
+        $from = $this->config->item('smtp_user');
+        
+        $this->email->set_newline("\r\n");
+        $this->email->from($from, 'StayBatu');
+        $this->email->to($email);
+        $this->email->subject('Booking ' .$homestay. ' Telah Berhasil!');
+        $this->email->message('<strong>Hai ' .$nama. ',</strong><br>Terima Kasih telah memesan Homestay di <strong>StayBatu</strong>! Berikut ini merupakan informasi mengenai penginapan Anda: <br><br>Pemilik Homestay: <strong>Mr/Mrs. '.$pemilik.'</strong><br><br>Check-In: <strong>' .$check_in. '</strong><br><br>Check-Out: <strong>' .$check_out. '</strong><br><br>Kedatanganmu kutunggu~');
+
+        if ($this->email->send()) {
+            echo 'Berhasil!'; // LETAKKAN CODE JIKA BERHASIL KONFIRMASI PESANAN HOMESTAY DISINI
+        } else {
+            show_error($this->email->print_debugger());
+        }
     }
 }
