@@ -139,6 +139,22 @@ class Admin extends CI_Controller
         $this->load->view('templates_login/footer');
     }
 
+    public function pemesan(){
+        $data['title'] = 'Daftar Pemesan Homestay';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $this->load->model('Kamar_model', 'kamar');
+        $data['tabel'] = $query = $this->db->select('pemesan.id_pemesan, pemesan.id_pemilik, homestay.judul, pemesan.id_homestay, pemesan.nama, pemesan.check_in, pemesan.check_out, pemesan.no_telp, upload_transaksi.bukti_transaksi')
+         ->from('pemesan')
+         ->join('homestay', 'homestay.id_homestay = pemesan.id_homestay')
+         ->join('upload_transaksi', 'pemesan.id_pemesan = upload_transaksi.id_transaksi')->get()->result_array();
+        
+        $this->load->view('templates_login/header', $data);
+        $this->load->view('templates_login/sidebar', $data);
+        $this->load->view('templates_login/topbar', $data);
+        $this->load->view('admin_login/pemesan', $data);
+        $this->load->view('templates_login/footer');
+    }
+
     public function deleteHomestay($id) {
         $this->db->delete('homestay', array('id' => $id));
         redirect('admin/homestay');
@@ -157,6 +173,12 @@ class Admin extends CI_Controller
     public function deleteTransaksi($id) {
         $this->db->delete('upload_transaksi', array('id_transaksi' => $id));
         redirect('admin/reservasi_pembayaran');
+    }
+
+    public function deletePemesan($id) {
+        $this->db->delete('upload_transaksi', array('id_homestay' => $id));
+        $this->db->delete('pemesan', array('id_homestay' => $id));
+        redirect('user/pemesan');
     }
 
 }
