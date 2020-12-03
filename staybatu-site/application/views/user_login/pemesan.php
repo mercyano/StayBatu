@@ -57,14 +57,14 @@ function dateDiffInDays($date1, $date2)
 											title="Update Record" data-toggle="tooltip">
 											<i class="fas fa-fw fa-edit"></i>
 										</a>-->
-										<a title="Decline" style="color:red;"
+										<a title="Tolak" style="color:red;"
 											href="<?= base_url('user/deleteTransaksi/'). $ku['id_pemesan']; ?>">
-											<i class="fas fa-fw fa-trash"></i>
+											<i class="fas fa-window-close"></i>
 										</a>
 									</center>
 
 								</td>
-								<!-- <td><a href="<?php /*echo base_url('host_login/sewakan'); ?>?id=<?= $user['id_pemilik']; */ ?>" title="Update Record" data-togglesss="tooltip"><i class="fas fa-fw fa-edit"></i></a></td> -->
+								
 
 							</tr>
 							<?php $i++; ?>
