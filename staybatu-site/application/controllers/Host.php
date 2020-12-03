@@ -42,53 +42,10 @@ class Host extends CI_Controller {
             $ac = $this->input->post('ac');
             $dapur = $this->input->post('dapur');
             $parkir = $this->input->post('parkir');
-
-            // if($this->input->post('wifi'))
-            // {
-            //     $wifi = $this->input->post('wifi');
-            // } else {
-            //     $wifi = 0;
-            // }
-            // if($this->input->post('tv'))
-            // {
-            //     $tv = $this->input->post('tv');
-            // } else {
-            //     $tv = 0;
-            // }
-            // if($this->input->post('ac'))
-            // {
-            //     $ac = $this->input->post('ac');
-            // } else {
-            //     $ac = 0;
-            // }
-            // if($this->input->post('dapur'))
-            // {
-            //     $dapur = $this->input->post('dapur');
-            // } else {
-            //     $dapur = 0;
-            // }
-            // if($this->input->post('dapur'))
-            // {
-            //     $parkir = $this->input->post('parkir');
-            // } else {
-            //     $parkir = 0;
-            // }
             $deskripsi = $this->input->post('deskripsi');
             $no_wa = $this->input->post('no_wa');
             $gambar = file_get_contents($_FILES['gambar']['tmp_name']);
             $type = $_FILES['gambar']['type'];
-
-            /*if ($gambar = '') {
-            } else {
-                $config['upload_path'] = './assets/images';
-                $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('gambar')) {
-                    echo "Upload Gagal";
-                    die();
-                } else {
-                    $gambar = $this->upload->data('file_name');
-                }
-            }*/
 
             $data = array(
                 'id' => '',
