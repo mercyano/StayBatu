@@ -267,4 +267,8 @@ class User extends CI_Controller
         $this->db->delete('pemesan', array('id_pemesan' => $id_pemesan));
         redirect('user/pemesan');
     }
+
+    public function terima($id_pemesan){
+        
+    }
 }
