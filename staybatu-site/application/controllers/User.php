@@ -262,9 +262,9 @@ class User extends CI_Controller
         $this->load->view('templates_login/footer');
     }
 
-    public function deleteTransaksi($id) {
-        $this->db->delete('upload_transaksi', array('id_homestay' => $id));
-        $this->db->delete('pemesan', array('id_homestay' => $id));
+    public function deleteTransaksi($id_pemesan) {
+        $this->db->delete('upload_transaksi', array('id_transaksi' => $id_pemesan));
+        $this->db->delete('pemesan', array('id_pemesan' => $id_pemesan));
         redirect('user/pemesan');
     }
 }
