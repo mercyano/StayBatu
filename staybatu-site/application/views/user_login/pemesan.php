@@ -53,10 +53,10 @@ function dateDiffInDays($date1, $date2)
 								</td>
 								<td>
 									<center>
-										<!--<a href="#"
-											title="Update Record" data-toggle="tooltip">
-											<i class="fas fa-fw fa-edit"></i>
-										</a>-->
+									<a title="Terima" style="color:#51adcf;"
+											href="<?= base_url('user/terima/'). $ku['id_pemesan']; ?>">
+											<i class="fas fa-calendar-check"></i>
+										</a>
 										<a title="Decline" style="color:red;"
 											href="<?= base_url('user/deleteTransaksi/'). $ku['id_pemesan']; ?>">
 											<i class="fas fa-fw fa-trash"></i>
