@@ -40,7 +40,7 @@ class Kamar_model extends CI_Model
 	}
 
      public function get_pemesan($data){ // Menangkap id_pemilik USER
-          $query = $this->db->select('pemesan.id_pemesan, pemesan.id_pemilik, homestay.judul, homestay.harga, pemesan.id_homestay, pemesan.nama, pemesan.check_in, pemesan.check_out, pemesan.no_telp, upload_transaksi.bukti_transaksi')
+          $query = $this->db->select('pemesan.id_pemesan, pemesan.id_pemilik, homestay.judul, homestay.harga, pemesan.id_homestay, pemesan.nama, pemesan.check_in, pemesan.check_out, pemesan.no_telp, pemesan.status, upload_transaksi.bukti_transaksi')
            ->from('pemesan')
            ->join('homestay', 'homestay.id_homestay = pemesan.id_homestay')
            ->join('user', 'pemesan.id_pemilik = user.id_pemilik')
@@ -51,7 +51,7 @@ class Kamar_model extends CI_Model
       }
 
       public function get_pemesan_by_id_pemesan($id_pemesan){
-          $query = $this->db->select('pemesan.id_pemesan, pemesan.id_pemilik, pemesan.email, user.name, homestay.judul, homestay.harga, pemesan.id_homestay, pemesan.nama, pemesan.check_in, pemesan.check_out')
+          $query = $this->db->select('pemesan.id_pemesan, pemesan.id_pemilik, pemesan.email, user.name, homestay.judul, homestay.harga, pemesan.id_homestay, pemesan.nama, pemesan.check_in, pemesan.check_out, pemesan.status')
            ->from('pemesan')
            ->join('homestay', 'homestay.id_homestay = pemesan.id_homestay')
            ->join('user', 'pemesan.id_pemilik = user.id_pemilik')

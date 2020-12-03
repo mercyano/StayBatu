@@ -53,14 +53,28 @@ function dateDiffInDays($date1, $date2)
 								</td>
 								<td>
 									<center>
-									<a title="Terima" style="color:#51adcf;"
-											href="<?= base_url('user/terima/'). $ku['id_pemesan']; ?>">
-											<i class="fas fa-calendar-check"></i>
-										</a>
-										<a title="Tolak" style="color:red;"
+									
+										<?php
+										if ($ku['status'] == 0) { ?>
+
+											<a title="Terima" style="color:#51adcf;"
+											href="<?= base_url('user/terima/'). $ku['id_pemesan']; ?>/1">
+												<i class="fas fa-calendar-check"></i>
+											</a>
+											<a title="Tolak" style="color:red;"
+												href="<?= base_url('user/deleteTransaksi/'). $ku['id_pemesan']; ?>">
+												<i class="fas fa-window-close"></i>
+											</a>
+										<?php
+										} else { ?>
+											<span class="label label-sm label-success">Success</span>
+											<a style="color:red;"
 											href="<?= base_url('user/deleteTransaksi/'). $ku['id_pemesan']; ?>">
-											<i class="fas fa-window-close"></i>
+											<i class="fas fa-fw fa-trash"></i>
 										</a>
+										<?php
+										}
+										?>
 									</center>
 
 								</td>

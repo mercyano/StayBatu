@@ -290,7 +290,19 @@ class User extends CI_Controller
         $this->email->message('<strong>Hai ' .$nama. ',</strong><br>Terima Kasih telah memesan Homestay di <strong>StayBatu</strong>! Berikut ini merupakan informasi mengenai penginapan Anda: <br><br>Pemilik Homestay: <strong>Mr/Mrs. '.$pemilik.'</strong><br><br>Check-In: <strong>' .$check_in. '</strong><br><br>Check-Out: <strong>' .$check_out. '</strong><br><br>Kedatanganmu kutunggu~');
 
         if ($this->email->send()) {
-            echo 'Berhasil!'; // LETAKKAN CODE JIKA BERHASIL KONFIRMASI PESANAN HOMESTAY DISINI
+            if($this->session->userdata("id_pemilik")!=="" ) {
+                $id['id_pemesan']         = $this->uri->segment(3);
+                $up['status']     = $this->uri->segment(4);
+    
+                $this->db->update("pemesan",$up,$id);
+                 
+                $this->session->set_flashdata('in','OK');
+                redirect("user/pemesan");
+    
+                }
+                else{
+                    redirect('user/pemesan');
+            }  
         } else {
             show_error($this->email->print_debugger());
         }
