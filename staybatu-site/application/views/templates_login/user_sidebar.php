@@ -29,6 +29,7 @@
                   <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" href="<?= base_url('user/booking'); ?>">Booking</a>
                     <a class="dropdown-item" href="<?= base_url('user/transaksi'); ?>">Transaksi</a>
+                    <a class="dropdown-item" href="<?= base_url('user/pemesan'); ?>">Pemesan</a>
                   </div>
             </li>
             <li class="nav-item">

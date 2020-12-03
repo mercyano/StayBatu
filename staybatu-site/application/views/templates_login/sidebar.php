@@ -48,6 +48,7 @@
                   <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" href="<?= base_url('admin/reservasi'); ?>">Booking</a>
                     <a class="dropdown-item" href="<?= base_url('admin/reservasi_pembayaran'); ?>">Transaksi</a>
+                    <a class="dropdown-item" href="<?= base_url('admin/pemesan'); ?>">Pemesan</a>
                   </div>
             </li>
             <li class="nav-item dropdown">
