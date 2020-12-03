@@ -57,7 +57,7 @@ function dateDiffInDays($date1, $date2)
 											href="<?= base_url('user/terima/'). $ku['id_pemesan']; ?>">
 											<i class="fas fa-calendar-check"></i>
 										</a>
-										<a title="Decline" style="color:red;"
+										<a title="Tolak" style="color:red;"
 											href="<?= base_url('user/deleteTransaksi/'). $ku['id_pemesan']; ?>">
 											<i class="fas fa-window-close"></i>
 										</a>
