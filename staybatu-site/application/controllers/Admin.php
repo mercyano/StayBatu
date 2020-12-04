@@ -13,7 +13,9 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
+        $data['pengguna'] = $this->db->count_all_results('user');
+        $data['homestay'] = $this->db->count_all_results('homestay');
+        
         $this->load->view('templates_login/header', $data);
         $this->load->view('templates_login/sidebar', $data);
         $this->load->view('templates_login/topbar', $data);
