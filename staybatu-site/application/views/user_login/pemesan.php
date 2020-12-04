@@ -52,9 +52,8 @@ function dateDiffInDays($date1, $date2)
 								
 								</td>
 								<td>
-									<center>
-									
-										<?php
+									<center>		
+									<?php
 										if ($ku['status'] == 0) { ?>
 
 											<a title="Terima" style="color:#51adcf;"
@@ -66,9 +65,20 @@ function dateDiffInDays($date1, $date2)
 												<i class="fas fa-window-close"></i>
 											</a>
 										<?php
+										} else if ($ku['status'] == 1) { ?>
+
+											<a title="Check-Out" class = "btn btn-danger btn-sm" 
+											href="<?= base_url('user/check_out/'). $ku['id_pemesan']; ?>/2">
+												Check-Out
+											</a>
+											<a title="Tolak" style="color:red;"
+												href="<?= base_url('user/deleteTransaksi/'). $ku['id_pemesan']; ?>">
+												<i class="fas fa-window-close"></i>
+											</a>
+										<?php
 										} else { ?>
 											<span class="label label-sm label-success">Success</span>
-											<a style="color:red;"
+											<a title="Hapus Pesanan" style="color:red;"
 											href="<?= base_url('user/deleteTransaksi/'). $ku['id_pemesan']; ?>">
 											<i class="fas fa-fw fa-trash"></i>
 										</a>

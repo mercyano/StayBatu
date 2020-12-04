@@ -307,4 +307,43 @@ class User extends CI_Controller
             show_error($this->email->print_debugger());
         }
     }
+
+    public function check_out($id_pemesan){
+        $this->load->config('email');
+        $this->load->library('email');
+        $this->load->model('Kamar_model', 'kamar');
+        $data['pemesan'] = $this->kamar->get_pemesan_by_id_pemesan($id_pemesan);
+        
+
+        $email = $data['pemesan']['email'];
+        $nama = $data['pemesan']['nama'];
+        $pemilik = $data['pemesan']['name'];
+        $from = $this->config->item('smtp_user');
+        
+        $this->email->set_newline("\r\n");
+        $this->email->from($from, 'StayBatu');
+        $this->email->to($email);
+        $this->email->subject('Terima kasih telah berkunjung ke rumah Kami!');
+        $this->email->message('Dari <strong>Mr/Mrs. '.$pemilik.'</strong><br><br><strong>Hai ' .$nama. ',</strong><br>Terima Kasih telah berkunjung dan menginap di rumah Kami!<br><em>Kalau ada sumur di ladang, boleh kita menumpang mandi..<br>kalau ada umur yang panjang, boleh kita berjumpa lagi~<em>');
+
+        if ($this->email->send()) {
+            if($this->session->userdata("id_pemilik")!=="" ) {
+
+                $id['id_pemesan']         = $this->uri->segment(3);
+                $up['status']     = $this->uri->segment(4);
+    
+                $this->db->update("pemesan",$up,$id);
+                 
+                $this->session->set_flashdata('in','OK');
+                redirect("user/pemesan");
+    
+                }
+                else{
+                    redirect('user/pemesan');
+    
+                } // LETAKKAN CODE JIKA BERHASIL KONFIRMASI PESANAN HOMESTAY DISINI
+        } else {
+            show_error($this->email->print_debugger());
+        }
+    }
 }
