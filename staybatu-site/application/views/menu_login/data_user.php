@@ -12,23 +12,22 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Host Id</th>
                       <th>Nama</th>
                       <th>Email</th>
-                      <th>Role Id</th>
+                      <th>Role</th>
                       <th>Date Created</th>
                       <th>Aksi</th>
-                    </tr>
+                    </tr> 
                   </thead>
+                  
                   <tbody>
                     <?php $i=1; ?>
                     <?php foreach( $tabel as $akun ): ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $akun['id_pemilik']; ?></td>
                       <td><?= $akun['name']; ?></td>
                       <td><?= $akun['email']; ?></td>
-                      <td><?= $akun['role_id']; ?></td>
+                      <td><?php echo ($akun['role_id'] == 1) ? ('Admin') : ('User') ?></td>
                       <td><?= date('d F Y', $akun['date_created']); ?></td>
                       <td>
                         <center>
