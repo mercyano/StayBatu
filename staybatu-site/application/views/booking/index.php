@@ -1,7 +1,6 @@
-<div class="container">
-
-    <center>
-        <h3>Booking <?php echo $homestay['judul'] ?></h3>
+<center>
+    <div class="host-sewa-box">
+    <h3>Booking <?php echo $homestay['judul'] ?></h3>
         <hr>
         <?= form_open_multipart('home/bayar/' . $homestay['id_homestay'])  ?>
 
@@ -20,10 +19,7 @@
         <div class="form-group">
             <label>Check out : <input type="date" class="form-control" name="check_out" id="check_out" required></label>
         </div>
-
-</div>
-<br>
-
+	</div>
 <hr>
 <div class="text-center">
     <button type=" submit" class="btn btn-success">Submit</button>
@@ -33,6 +29,4 @@
     </br>
 </div>
 <?= form_close() ?>
-</div>
-
 </div>
