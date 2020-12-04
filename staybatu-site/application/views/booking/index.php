@@ -19,14 +19,10 @@
         <div class="form-group">
             <label>Check out : <input type="date" class="form-control" name="check_out" id="check_out" required></label>
         </div>
+        <button type=" submit" class="btn btn-success">Submit</button>
 	</div>
-<hr>
-<div class="text-center">
-    <button type=" submit" class="btn btn-success">Submit</button>
-    </a>
     </center>
     <br>
-    </br>
 </div>
 <?= form_close() ?>
 </div>
