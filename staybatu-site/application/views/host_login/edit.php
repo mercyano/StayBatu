@@ -77,7 +77,7 @@
 
 	<div class="host-sewa-box">
 		<h3><?php echo $title ?></h3>
-		<?= form_open_multipart('host/tambah')  ?>
+		<?= form_open_multipart("host/edit/". $homestay['id_homestay']); ?>
 		<div class="form-group">
 			<label for="judul">Judul Penginapan <span style="color: red;">*</span></label></label>
 			<input type="text" value="<?= $homestay['judul'];?>" class="form-control" name="judul" id="judul" placeholder="Tulis judul" required>
