@@ -45,7 +45,7 @@ class User extends CI_Controller
             $this->load->view('templates_login/header', $data);
             $this->load->view('templates_login/sidebar', $data);
             $this->load->view('templates_login/topbar', $data);
-            $this->load->view('user_login/edit', $data);
+            $this->load->view('admin_login/edit', $data);
             $this->load->view('templates_login/footer');
         } else {
             $name = $this->input->post('name');
@@ -143,7 +143,7 @@ class User extends CI_Controller
             $this->load->view('templates_login/header', $data);
             $this->load->view('templates_login/sidebar', $data);
             $this->load->view('templates_login/topbar', $data);
-            $this->load->view('user_login/changepassword', $data);
+            $this->load->view('admin_login/changepassword', $data);
             $this->load->view('templates_login/footer');
         } else {
             $current_password = $this->input->post('current_password');
