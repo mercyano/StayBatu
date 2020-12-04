@@ -33,7 +33,7 @@
 						<?php echo $home['harga'] ?></li>
 				</ul>
 				<div class="card-body">
-					<a style="text-decoration : none" href="<?php echo site_url('home/view/'.$home['id'])?>"><button
+					<a style="text-decoration : none" href="<?php echo site_url('home/view/'.$home['id_homestay'])?>"><button
 							class="btn btn-success btn-block">Selengkapnya</button></a>
 				</div>
 			</div>
