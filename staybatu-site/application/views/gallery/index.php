@@ -1,6 +1,31 @@
-<h2>Gallery</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer gravida ex eu imperdiet eleifend. Suspendisse
-	finibus nibh nec augue lacinia, a elementum ipsum elementum. Maecenas nec aliquam orci, quis sodales nunc. Duis
-	neque eros, dignissim nec odio vitae, mollis consectetur orci. Proin mattis sit amet turpis eget commodo. Maecenas
-	lobortis congue massa, eget tempor nunc pharetra ac. Praesent quis tempor quam. Quisque maximus, purus quis
-	fermentum consectetur, magna metus semper felis, vel sollicitudin ligula ligula non libero.</p>
+
+<!-- Container (Services Section) -->
+<div class="container-fluid text-center">
+  
+
+  <h2>Gallery</h2><br>
+  
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+      	<img class="img-thumbnail img-responsive" src="<?= base_url(); ?>/assets/galeri/galeri3.jpg" width="300" height="200">
+        <p class="pt-2"><strong>Gallery 2</strong></p>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+      	<img class="img-thumbnail img-responsive" src="<?= base_url(); ?>/assets/galeri/galeri4.jpg" width="300" height="200">
+        <p class="pt-2"><strong>Gallery 1</strong></p>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+      	<img class="img-thumbnail img-responsive" src="<?= base_url(); ?>/assets/galeri/galeri5.jpg" width="300" height="200">
+        <p class="pt-2"><strong>Gallery 3</strong></p>
+
+      </div>
+    </div>
+  </div><br>
+</div>
