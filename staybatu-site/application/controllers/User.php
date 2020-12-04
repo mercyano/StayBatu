@@ -292,11 +292,13 @@ class User extends CI_Controller
         if ($this->email->send()) {
             if($this->session->userdata("id_pemilik")!=="" ) {
                 $id['id_pemesan']         = $this->uri->segment(3);
-                $up['status']     = $this->uri->segment(4);
+                $id1['id_homestay'] = $this->uri->segment(4);
+                $up['status']     = $this->uri->segment(5);
+                $up1['statushs'] = $this->uri->segment(6);
     
                 $this->db->update("pemesan",$up,$id);
+                $this->db->update("homestay",$up1,$id1);
                  
-                $this->session->set_flashdata('in','OK');
                 redirect("user/pemesan");
     
                 }
@@ -330,11 +332,13 @@ class User extends CI_Controller
             if($this->session->userdata("id_pemilik")!=="" ) {
 
                 $id['id_pemesan']         = $this->uri->segment(3);
-                $up['status']     = $this->uri->segment(4);
+                $id1['id_homestay'] = $this->uri->segment(4);
+                $up['status']     = $this->uri->segment(5);
+                $up1['statushs'] = $this->uri->segment(6);
     
                 $this->db->update("pemesan",$up,$id);
+                $this->db->update("homestay",$up1,$id1);
                  
-                $this->session->set_flashdata('in','OK');
                 redirect("user/pemesan");
     
                 }
