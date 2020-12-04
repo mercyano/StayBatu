@@ -23,11 +23,6 @@
                     <span>DashBoard</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('admin/kritik'); ?>">
-                    <i class="fas fa-fw fa-envelope-open"></i>
-                    <span>Kritik & Saran</span></a>
-            </li>
 
             <!-- LOOPING MENU -->
             <div class="sidebar-heading">
@@ -47,7 +42,6 @@
                   </a>
                   <div class="dropdown-menu" aria-labelledby="pagesDropdown">
                     <a class="dropdown-item" href="<?= base_url('admin/reservasi'); ?>">Booking</a>
-                    <a class="dropdown-item" href="<?= base_url('admin/reservasi_pembayaran'); ?>">Transaksi</a>
                     <a class="dropdown-item" href="<?= base_url('admin/pemesan'); ?>">Pemesan</a>
                   </div>
             </li>
