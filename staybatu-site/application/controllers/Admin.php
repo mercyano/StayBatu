@@ -105,7 +105,7 @@ class Admin extends CI_Controller
     }
 
     public function reservasi() {
-        $data['title'] = 'Reservasi';
+        $data['title'] = 'Daftar Semua Booking';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['tabel'] = $this->db->get('pemesan')->result_array();
 
