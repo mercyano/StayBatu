@@ -14,7 +14,7 @@
                       <th>No</th>
                       <th>Nama</th>
                       <th>Email</th>
-                      <th>No Telphone</th>
+                      <th>No. Telp</th>
                       <th>Check In</th>
                       <th>Check Out</th>
                       <th>Aksi</th>
