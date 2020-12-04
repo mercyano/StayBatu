@@ -118,4 +118,15 @@ class Home extends CI_Controller
         $this->db->insert('upload_transaksi', $masuk);
         redirect('');
     }
+
+    public function saran(){
+        $data = array(
+            'id_saran' => '',
+            'nama' => $this->input->post('name'),
+            'email' => $this->input->post('email'),
+            'komen' => $this->input->post('comments')
+        );
+        $this->db->insert('saran', $data);
+        redirect('home');
+    } 
 }
