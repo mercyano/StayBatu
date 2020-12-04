@@ -12,7 +12,6 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Id Pemesan</th>
                       <th>Nama</th>
                       <th>Email</th>
                       <th>No Telphone</th>
@@ -26,7 +25,6 @@
                     <?php foreach( $tabel as $pemesan ): ?>
                     <tr>
                       <td><?= $i; ?></td>
-                      <td><?= $pemesan['id_pemesan']; ?></td>
                       <td><?= $pemesan['nama']; ?></td>
                       <td><?= $pemesan['email']; ?></td>
                       <td><?= $pemesan['no_telp']; ?></td>
