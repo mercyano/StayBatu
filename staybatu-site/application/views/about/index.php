@@ -46,3 +46,34 @@
     </div>
   </div>
 </div>
+
+<!-- Container (Contact Section) -->
+<div class="container-fluid" style="background-color: #F0F0F0;">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5 mr-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><i class="fas fa-map-marker-alt"></i></span> Malang, Jawa Timur</p>
+      <p><i class="fas fa-phone"></i> +62 896-9178-9050</p>
+      <p><i class="fas fa-envelope"></i>  noreply.staybatu@gmail.com</p>
+    </div>
+    <form action="<?= base_url(); ?>home/saran/2" method="post">
+    <div class="col">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-success pull-right" type="submit">Kirim</button>
+        </div>
+      </div>
+    </div>
+   </form>
+  </div>
+</div>
