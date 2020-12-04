@@ -45,7 +45,7 @@
                       <td><?= $homestay['dapur']; ?></td>
                       <td><?= $homestay['parkir']; ?></td>
                       <td><?= $homestay['id_pemilik']; ?></td>
-                      <td><?= $homestay['status']; ?></td>
+                      <td><?= $homestay['statushs']; ?></td>
                       <td>
                         <center>
                           <a href="<?= base_url('admin/deleteHomestay/'). $homestay['id_homestay']; ?>">
