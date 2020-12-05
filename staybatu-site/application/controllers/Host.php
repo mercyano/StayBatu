@@ -61,7 +61,7 @@ class Host extends CI_Controller {
                 'parkir' => $parkir,
                 'deskripsi' => $deskripsi,
                 'gambar'  => $gambar,
-                'status' => 0,
+                'statushs' => 0,
                 'id_pemilik' => $data['user']['id_pemilik'],
                 'no_wa' => $no_wa,
                 'mime' => $type
