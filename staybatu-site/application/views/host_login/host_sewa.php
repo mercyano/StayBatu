@@ -86,7 +86,7 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text">Rp<span style="color: red;">*</span></label></span>
 			</div>
-			<input type="number" min="50000" max="2000000" step="50000" name="harga" id="harga" class="form-control"
+			<input type="number" min="50000" max="2000000" name="harga" id="harga" class="form-control"
 				placeholder="Harga per Malam" required>
 		</div>
 		<div class="form-group">
