@@ -23,6 +23,11 @@
                     <span>DashBoard</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('admin/kritik'); ?>">
+                    <i class="fas fa-fw fa-envelope-open"></i>
+                    <span>Kritik & Saran</span></a>
+            </li>
 
             <!-- LOOPING MENU -->
             <div class="sidebar-heading">

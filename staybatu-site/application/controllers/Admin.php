@@ -82,6 +82,7 @@ class Admin extends CI_Controller
     {
         $data['title'] = 'Kritik & Saran';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['tabel'] = $this->db->get('saran')->result_array();
 
         $this->load->view('templates_login/header', $data);
         $this->load->view('templates_login/sidebar', $data);
@@ -181,6 +182,11 @@ class Admin extends CI_Controller
         $this->db->delete('upload_transaksi', array('id_homestay' => $id));
         $this->db->delete('pemesan', array('id_homestay' => $id));
         redirect('admin/pemesan');
+    }
+
+    public function deleteSaran($id) {
+        $this->db->delete('saran', array('id_saran' => $id));
+        redirect('admin/kritik');
     }
 
 }

@@ -22,6 +22,7 @@
                       <th>AC</th>
                       <th>Dapur</th>
                       <th>Parkir</th>
+                      <th>Status</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -35,11 +36,12 @@
                       <td><?= $ku['kapasitas'] ?></td>
                       <td><?= $ku['kamar_tidur'] ?></td>
                       <td><?= $ku['kamar_mandi'] ?></td>
-                      <td><?= $ku['wifi'] ?></td>
-                      <td><?= $ku['tv'] ?></td>
-                      <td><?= $ku['ac'] ?></td>
-                      <td><?= $ku['dapur'] ?></td>
-                      <td><?= $ku['parkir'] ?></td>
+                      <td><?php echo ($ku['wifi'] == 1) ? ('✔') : ('✘') ?></td>
+                      <td><?php echo ($ku['tv'] == 1) ? ('✔') : ('✘') ?></td>
+                      <td><?php echo ($ku['ac'] == 1) ? ('✔') : ('✘') ?></td>
+                      <td><?php echo ($ku['dapur'] == 1) ? ('✔') : ('✘') ?></td>
+                      <td><?php echo ($ku['parkir'] == 1) ? ('✔') : ('✘') ?></td>
+                      <td><?php echo ($ku['statushs'] == 0) ? ('Available') : ('Not Available') ?></td>
                       <td>
                         <center>
                           <a href="<?php echo base_url() ?>host_login/edit/<?= $ku['id_homestay'];?>" title="Update Record" data-toggle="tooltip">
