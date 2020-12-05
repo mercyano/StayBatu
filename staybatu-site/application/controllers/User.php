@@ -203,11 +203,11 @@ class User extends CI_Controller
             $new_password = $this->input->post('new_password1');
             if (!password_verify($current_password, $data['user']['password'])) {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong current password!</div>');
-                redirect('user/changepassword');
+                redirect('user/user_changepassword');
             } else {
                 if ($current_password == $new_password) {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">New password cannot be the same as current password!</div>');
-                    redirect('user/changepassword');
+                    redirect('user/user_changepassword');
                 } else {
                     // password sudah ok
                     $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
@@ -217,7 +217,7 @@ class User extends CI_Controller
                     $this->db->update('user');
 
                     $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Password changed!</div>');
-                    redirect('user/changepassword');
+                    redirect('user/user_changepassword');
                 }
             }
         }
