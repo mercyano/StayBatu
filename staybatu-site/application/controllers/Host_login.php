@@ -36,7 +36,7 @@ class Host_login extends CI_Controller
 
    public function deleteHomestay($id) {
         $this->db->delete('homestay', array('id_homestay' => $id));
-        redirect('user/kamar_users');
+        redirect('user/kamar_user');
     }
 
 }
